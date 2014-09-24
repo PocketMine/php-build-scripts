@@ -1,7 +1,9 @@
 #!/bin/bash
 
-CHANNEL="stable"
 NAME="PocketMine-MP"
+if [ ! -z $CHANNEL ]; then
+    CHANNEL="stable"
+fi
 
 LINUX_32_BUILD="PHP_5.6.0_x86_Linux"
 LINUX_64_BUILD="PHP_5.6.0_x86-64_Linux"
