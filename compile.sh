@@ -1,32 +1,32 @@
 #!/bin/bash
-[ -z "$PHP_VERSION" ] && PHP_VERSION="7.0.0RC3"
+[ -z "$PHP_VERSION" ] && PHP_VERSION="7.0.1"
 
-PHP_IS_BETA="yes"
+PHP_IS_BETA="no"
 
 ZEND_VM="GOTO"
 
 ZLIB_VERSION="1.2.8"
-POLARSSL_VERSION="1.3.8"
+POLARSSL_VERSION="2.2.0"
 LIBMCRYPT_VERSION="2.5.8"
-GMP_VERSION="6.0.0a"
-GMP_VERSION_DIR="6.0.0"
-CURL_VERSION="curl-7_44_0"
+GMP_VERSION="6.1.0"
+GMP_VERSION_DIR="6.1.0"
+CURL_VERSION="curl-7_46_0"
 READLINE_VERSION="6.3"
 NCURSES_VERSION="5.9"
 PHPNCURSES_VERSION="1.0.2"
-PTHREADS_VERSION="3.0.7"
+PTHREADS_VERSION="3.1.5"
 XDEBUG_VERSION="2.2.6"
 PHP_POCKETMINE_VERSION="0.0.6"
 #UOPZ_VERSION="2.0.4"
 WEAKREF_VERSION="0.2.6"
-PHPYAML_VERSION="d222b607f0791a9bf15245672d5d95baf565c33f"
-YAML_VERSION="0.1.4"
+PHPYAML_VERSION="2.0.0RC5"
+YAML_VERSION="0.1.6"
 #PHPLEVELDB_VERSION="0.1.4"
 PHPLEVELDB_VERSION="2963815338edfebc5ab8c512bcd2b72f0357ac6e"
 #LEVELDB_VERSION="1.18"
 LEVELDB_VERSION="b633756b51390a9970efde9068f60188ca06a724" #Check MacOS
 LIBXML_VERSION="2.9.1"
-LIBPNG_VERSION="1.6.17"
+LIBPNG_VERSION="1.6.20"
 BCOMPILER_VERSION="1.0.2"
 
 echo "[PocketMine] PHP compiler for Linux, MacOS and Android"
@@ -549,8 +549,8 @@ if [ "$(uname -s)" != "Darwin" ] || [ "$IS_CROSSCOMPILE" == "yes" ] || [ "$COMPI
 
 	#PolarSSL
 	echo -n "[PolarSSL] downloading $POLARSSL_VERSION..."
-	download_file "https://polarssl.org/download/polarssl-${POLARSSL_VERSION}-gpl.tgz" | tar -zx >> "$DIR/install.log" 2>&1
-	mv polarssl-${POLARSSL_VERSION} polarssl
+	download_file "https://polarssl.org/download/mbedtls-${POLARSSL_VERSION}-gpl.tgz" | tar -zx >> "$DIR/install.log" 2>&1
+	mv mbedtls-${POLARSSL_VERSION} polarssl
 	echo -n " checking..."
 	cd polarssl
 	sed -i=".backup" 's,DESTDIR=/usr/local,,g' Makefile
