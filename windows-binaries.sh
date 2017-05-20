@@ -169,6 +169,7 @@ echo "opcache.save_comments=1" >> php.ini
 echo "opcache.load_comments=1" >> php.ini
 echo "opcache.fast_shutdown=0" >> php.ini
 echo "opcache.optimization_level=0xffffffff" >> php.ini
+echo "date.timezone = Europe/London" >> php.ini
 
 TIMEZONE=$(date +%Z)
 echo "date.timezone=$TIMEZONE" >> php.ini
